@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tai Chi para Golfistas · Guía Personal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1c1c18;
+  --ink2: #3a3a32;
+  --ink3: #7a7a6a;
+  --paper: #f8f6f0;
+  --paper2: #eeeae0;
+  --paper3: #e4e0d4;
+  --green: #3d6b47;
+  --green-light: #deeade;
+  --green-mid: #7aab84;
+  --gold: #8a6a20;
+  --gold-light: #f5edcc;
+  --gold-mid: #c8a850;
+  --earth: #6b4a2a;
+  --earth-light: #f0e4d4;
+  --border: #d0ccc0;
+  --shadow: 0 2px 12px rgba(28,28,24,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ─── PORTADA ─── */
+.cover {
+  background: var(--ink);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem 2rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, rgba(61,107,71,0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 20%, rgba(138,106,32,0.2) 0%, transparent 55%);
+}
+.cover-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.cover-content { position: relative; z-index: 2; }
+.cover-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 12vw, 6rem);
+  font-weight: 300;
+  color: #f8f6f0;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.cover-title em {
+  font-style: italic;
+  color: var(--gold-mid);
+}
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(248,246,240,0.55);
+  margin-bottom: 3rem;
+}
+.cover-stats {
+  display: flex;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.cover-stat {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.cover-stat:last-child { border-right: none; }
+.cover-stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #f8f6f0;
+  display: block;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.cover-stat-lbl {
+  font-size: 10px;
+  color: rgba(248,246,240,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cover-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.goal-pill {
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.gp-green { background: rgba(61,107,71,0.5); color: #a8d4b0; border: 1px solid rgba(122,171,132,0.3); }
+.gp-gold  { background: rgba(138,106,32,0.4); color: #e0c070; border: 1px solid rgba(200,168,80,0.3); }
+.gp-earth { background: rgba(107,74,42,0.4); color: #d4a880; border: 1px solid rgba(180,140,100,0.3); }
+
+/* ─── BENEFICIOS GOLF ─── */
+.golf-section {
+  background: var(--green);
+  color: #f8f6f0;
+  padding: 2.5rem 1.5rem;
+}
+.golf-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.golf-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: #f8f6f0;
+}
+.benefit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.benefit-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.benefit-icon { font-size: 22px; margin-bottom: 6px; }
+.benefit-name { font-size: 13px; font-weight: 500; color: #d8f0dc; margin-bottom: 4px; }
+.benefit-desc { font-size: 12px; color: rgba(248,246,240,0.6); line-height: 1.5; }
+
+/* ─── SECCIONES ─── */
+.page-section { padding: 2.5rem 1.5rem; max-width: 700px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+.section-line { width: 36px; height: 2px; background: var(--green); margin-bottom: 1.5rem; border-radius: 1px; }
+
+/* ─── SEMANA ─── */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+.day-cell {
+  border-radius: 8px;
+  padding: 8px 3px 9px;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--paper);
+}
+.day-name { font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink3); margin-bottom: 5px; display: block; }
+.day-dot { width: 28px; height: 28px; border-radius: 50%; margin: 0 auto 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+.dot-tc   { background: var(--green-light); }
+.dot-walk { background: #ddeaf8; }
+.dot-rest { background: var(--paper2); }
+.day-label { font-size: 9px; font-weight: 500; }
+.lbl-tc   { color: var(--green); }
+.lbl-walk { color: #3a6a9a; }
+.lbl-rest { color: var(--ink3); }
+
+/* ─── FASES ─── */
+.phase-wrap { margin-bottom: 2.5rem; }
+.phase-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+}
+.phase-tab-warm { background: var(--gold-light); border-color: #d4b860; }
+.phase-tab-main { background: var(--green-light); border-color: #8ec89a; }
+.phase-tab-cool  { background: var(--earth-light); border-color: #c4a080; }
+.phase-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink:0; }
+.dot-warm { background: var(--gold-mid); }
+.dot-main { background: var(--green); }
+.dot-cool { background: var(--earth); }
+.phase-name { font-size: 13px; font-weight: 500; }
+.phase-name-warm { color: var(--gold); }
+.phase-name-main { color: var(--green); }
+.phase-name-cool { color: var(--earth); }
+.phase-mins { margin-left: auto; font-size: 12px; color: var(--ink3); }
+
+/* ─── EJERCICIO CARD ─── */
+.ex-list-wrap {
+  border: 1px solid var(--border);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+.ex-list-warm { border-color: #d4b860; }
+.ex-list-main { border-color: #8ec89a; }
+.ex-list-cool  { border-color: #c4a080; }
+
+.ex-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+.ex-card:first-child { border-top: none; }
+.ex-figure {
+  background: var(--paper2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.75rem;
+  border-right: 1px solid var(--border);
+  min-height: 150px;
+}
+.ex-body { padding: 1.1rem 1.1rem 1.1rem 1.15rem; }
+.ex-number { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 3px; }
+.ex-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.ex-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-bottom: 0.65rem;
+}
+.badge-warm { background: var(--gold-light); color: var(--gold); }
+.badge-main { background: var(--green-light); color: var(--green); }
+.badge-cool  { background: var(--earth-light); color: var(--earth); }
+.ex-desc { font-size: 13px; color: var(--ink2); line-height: 1.6; margin-bottom: 0.65rem; }
+.ex-golf {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: var(--green);
+  background: var(--green-light);
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1.45;
+}
+.golf-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; flex-shrink: 0; margin-top: 1px; }
+
+/* ─── PROGRESIÓN ─── */
+.prog-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+.prog-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.1rem;
+  background: var(--paper2);
+  border-bottom: 1px solid var(--border);
+}
+.prog-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.prog-num-1 { background: var(--gold-light); color: var(--gold); }
+.prog-num-2 { background: var(--green-light); color: var(--green); }
+.prog-num-3 { background: var(--earth-light); color: var(--earth); }
+.prog-title { font-size: 14px; font-weight: 500; }
+.prog-title-sub { font-size: 12px; color: var(--ink3); }
+.prog-period { margin-left: auto; font-size: 11px; color: var(--ink3); }
+.prog-body { padding: 1rem 1.1rem; }
+.prog-item {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink2);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+.prog-item::before { content: '→'; color: var(--green-mid); flex-shrink: 0; font-weight: 500; }
+.prog-golf-note {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  background: var(--green-light);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--green);
+  font-style: italic;
+}
+
+/* ─── CONSEJOS ─── */
+.tip-card {
+  display: flex;
+  gap: 12px;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  background: #fff;
+  margin-bottom: 0.75rem;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+.tip-card strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 2px; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--ink);
+  color: rgba(248,246,240,0.35);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+footer span { color: var(--gold-mid); }
+
+/* ─── PRINT ─── */
+@media print {
+  .cover { min-height: auto; padding: 3rem 2rem; page-break-after: always; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .golf-section { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .ex-card { page-break-inside: avoid; }
+  .phase-wrap { page-break-inside: avoid; }
+  .prog-card { page-break-inside: avoid; }
+  body { font-size: 13px; }
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 480px) {
+  .cover-title { font-size: 4rem; }
+  .ex-card { grid-template-columns: 120px 1fr; }
+  .ex-figure { min-height: 130px; padding: 0.75rem 0.5rem; }
+  .benefit-grid { grid-template-columns: 1fr; }
+  .cover-stats { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ PORTADA ═══════════════════════════════ -->
+<div class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <p class="cover-eyebrow">Plan Personal · Tai Chi Yang</p>
+    <h1 class="cover-title">Tai<br><em>Chi</em></h1>
+    <p class="cover-subtitle">Elasticidad, equilibrio y golf</p>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="cover-stat-val">69</span>
+        <span class="cover-stat-lbl">años</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-val">35'</span>
+        <span class="cover-stat-lbl">por sesión</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-val">3×</span>
+        <span class="cover-stat-lbl">por semana</span>
+      </div>
+      <div class="cover-stat">
+        <span class="cover-stat-val">8</span>
+        <span class="cover-stat-lbl">ejercicios</span>
+      </div>
+    </div>
+    <div class="cover-goals">
+      <span class="goal-pill gp-green">⚖ Equilibrio</span>
+      <span class="goal-pill gp-gold">🤸 Elasticidad</span>
+      <span class="goal-pill gp-earth">⛳ Swing de golf</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ BENEFICIOS GOLF ═══════════════════════ -->
+<div class="golf-section">
+  <p class="golf-eyebrow">Por qué Tai Chi y golf se potencian</p>
+  <h2 class="golf-title">Cada movimiento<br>mejora tu juego</h2>
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🔄</div>
+      <div class="benefit-name">Rotación de cadera</div>
+      <div class="benefit-desc">El Tai Chi entrena la disociación pelvis-torso, clave para generar potencia en el swing sin forzar la espalda baja.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">⚖</div>
+      <div class="benefit-name">Transferencia de peso</div>
+      <div class="benefit-desc">El traspaso de peso de pie trasero a pie delantero en Tai Chi replica exactamente la mecánica del swing.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🧘</div>
+      <div class="benefit-name">Concentración</div>
+      <div class="benefit-desc">La práctica meditativa reduce la tensión muscular involuntaria que acorta el swing y genera errores bajo presión.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🦵</div>
+      <div class="benefit-name">Estabilidad de rodilla</div>
+      <div class="benefit-desc">Fortalece cuádriceps y estabilizadores laterales, protegiendo las rodillas al caminar el campo o girar el swing.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SEMANA TIPO ════════════════════════════ -->
+<div class="page-section">
+  <p class="section-eyebrow">Planificación</p>
+  <h2 class="section-title">Semana tipo</h2>
+  <div class="section-line"></div>
+
+  <div class="week-grid">
+    <div class="day-cell">
+      <span class="day-name">Lun</span>
+      <div class="day-dot dot-tc">🌿</div>
+      <div class="day-label lbl-tc">Tai Chi</div>
+    </div>
+    <div class="day-cell">
+      <span class="day-name">Mar</span>
+      <div class="day-dot dot-walk">🚶</div>
+      <div class="day-label lbl-walk">Caminar</div>
+    </div>
+    <div class="day-cell">
+      <span class="day-name">Mié</span>
+      <div class="day-dot dot-tc">🌿</div>
+      <div class="day-label lbl-tc">Tai Chi</div>
+    </div>
+    <div class="day-cell">
+      <span class="day-name">Jue</span>
+      <div class="day-dot dot-walk">🚶</div>
+      <div class="day-label lbl-walk">Caminar</div>
+    </div>
+    <div class="day-cell">
+      <span class="day-name">Vie</span>
+      <div class="day-dot dot-tc">🌿</div>
+      <div class="day-label lbl-tc">Tai Chi</div>
+    </div>
+    <div class="day-cell">
+      <span class="day-name">Sáb</span>
+      <div class="day-dot" style="background:#f0e8d4; font-size:13px">⛳</div>
+      <div class="day-label" style="color:#5a4a20; font-size:9px">Golf / caminar</div>
+    </div>
+    <div class="day-cell">
+      <span class="day-name">Dom</span>
+      <div class="day-dot dot-rest">—</div>
+      <div class="day-label lbl-rest">Descanso</div>
+    </div>
+  </div>
+  <p style="font-size:12.5px; color:var(--ink3); font-style:italic; padding: 0.5rem 0.5rem 0;">
+    El día de golf puede reemplazar la caminata. Practicar Tai Chi antes de jugar activa la cadena cinética y mejora la fluidez del swing.
+  </p>
+</div>
+
+<!-- ═══════════════════════════════ SESIÓN: CALENTAMIENTO ═════════════════ -->
+<div class="page-section" style="padding-top:0">
+  <p class="section-eyebrow">La sesión completa</p>
+  <h2 class="section-title">Ejercicios</h2>
+  <div class="section-line"></div>
+
+  <!-- FASE 1: CALENTAMIENTO -->
+  <div class="phase-wrap">
+    <div class="phase-tab phase-tab-warm">
+      <div class="phase-dot dot-warm"></div>
+      <span class="phase-name phase-name-warm">Calentamiento</span>
+      <span class="phase-mins">5 minutos</span>
+    </div>
+    <div class="ex-list-wrap ex-list-warm">
+
+      <!-- EJ 1 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Figura de pie, respiración abdominal -->
+            <!-- Suelo -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Piernas -->
+            <line x1="52" y1="105" x2="44" y2="132" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="68" y1="105" x2="76" y2="132" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- Torso -->
+            <rect x="45" y="72" width="30" height="35" rx="6" fill="#3d6b47" opacity="0.15" stroke="#3d6b47" stroke-width="1.5"/>
+            <!-- Brazos con manos en abdomen -->
+            <path d="M45 82 Q30 88 35 95 Q42 92 50 93" stroke="#3d6b47" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M75 82 Q90 88 85 95 Q78 92 70 93" stroke="#3d6b47" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Manos sobre abdomen -->
+            <ellipse cx="50" cy="95" rx="8" ry="5" fill="#c8a850" opacity="0.7"/>
+            <ellipse cx="70" cy="95" rx="8" ry="5" fill="#c8a850" opacity="0.7"/>
+            <!-- Cuello -->
+            <rect x="56" y="62" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <!-- Cabeza -->
+            <circle cx="60" cy="52" r="14" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="60" cy="52" r="10" fill="#c8a850" opacity="0.25"/>
+            <!-- Flechas respiración -->
+            <path d="M20 88 Q10 85 10 80 Q10 72 20 70" stroke="#c8a850" stroke-width="1.5" fill="none" stroke-dasharray="3,2" stroke-linecap="round"/>
+            <path d="M100 88 Q110 85 110 80 Q110 72 100 70" stroke="#c8a850" stroke-width="1.5" fill="none" stroke-dasharray="3,2" stroke-linecap="round"/>
+            <text x="60" y="15" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">inhala 4 seg</text>
+            <text x="60" y="25" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">exhala 6 seg</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 1</div>
+          <div class="ex-name">Respiración abdominal</div>
+          <span class="ex-badge badge-warm">⏱ 1 minuto</span>
+          <p class="ex-desc">De pie, pies al ancho de caderas. Coloca ambas manos sobre el abdomen. Inhala lentamente por la nariz 4 segundos, sintiendo cómo el abdomen se expande. Exhala por la nariz 6 segundos, abdomen cae suavemente.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Activa el control respiratorio que reduce la tensión muscular antes de cada golpe.</div>
+        </div>
+      </div>
+
+      <!-- EJ 2 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rotaciones cuello y hombros -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="52" y1="108" x2="44" y2="132" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="68" y1="108" x2="76" y2="132" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- Torso -->
+            <rect x="47" y="75" width="26" height="35" rx="6" fill="#3d6b47" opacity="0.15" stroke="#3d6b47" stroke-width="1.5"/>
+            <!-- Brazos caídos -->
+            <line x1="47" y1="80" x2="30" y2="105" stroke="#3d6b47" stroke-width="3" stroke-linecap="round"/>
+            <line x1="73" y1="80" x2="90" y2="105" stroke="#3d6b47" stroke-width="3" stroke-linecap="round"/>
+            <!-- Cuello -->
+            <rect x="56" y="65" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <!-- Cabeza inclinada -->
+            <circle cx="65" cy="52" r="13" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="65" cy="52" r="9" fill="#c8a850" opacity="0.25"/>
+            <!-- Flecha rotación cuello -->
+            <path d="M42 45 Q55 35 68 40 Q80 45 82 55" stroke="#c8a850" stroke-width="1.8" fill="none" stroke-linecap="round" marker-end="url(#arrowGold)"/>
+            <!-- Flechas hombros -->
+            <path d="M30 82 Q20 70 30 62 Q40 57 42 65" stroke="#3d6b47" stroke-width="1.5" fill="none" stroke-dasharray="3,2" stroke-linecap="round"/>
+            <defs>
+              <marker id="arrowGold" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#c8a850"/>
+              </marker>
+            </defs>
+            <text x="60" y="18" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">movimientos</text>
+            <text x="60" y="28" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">lentos y suaves</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 2</div>
+          <div class="ex-name">Rotaciones de cuello y hombros</div>
+          <span class="ex-badge badge-warm">⏱ 2 minutos</span>
+          <p class="ex-desc">Inclina la cabeza suavemente hacia cada lado (oreja al hombro). Luego haz medios círculos lentos: mentón al pecho, oreja derecha, nuca, oreja izquierda. Alterna con rotaciones circulares de hombros hacia adelante y hacia atrás, 8 veces cada dirección.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Libera tensión cervical y activa la movilidad del cinturón escapular, esencial para el backswing completo.</div>
+        </div>
+      </div>
+
+      <!-- EJ 3 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Balanceo lateral tronco -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <!-- Piernas separadas -->
+            <line x1="55" y1="105" x2="40" y2="132" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="65" y1="105" x2="80" y2="132" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- Torso inclinado -->
+            <rect x="45" y="68" width="30" height="38" rx="6" fill="#3d6b47" opacity="0.15" stroke="#3d6b47" stroke-width="1.5" transform="rotate(-8 60 87)"/>
+            <!-- Brazo izquierdo arriba -->
+            <line x1="50" y1="75" x2="28" y2="55" stroke="#c8a850" stroke-width="3" stroke-linecap="round"/>
+            <!-- Brazo derecho abajo en cadera -->
+            <line x1="70" y1="80" x2="82" y2="95" stroke="#3d6b47" stroke-width="3" stroke-linecap="round"/>
+            <!-- Cuello y cabeza inclinada -->
+            <rect x="56" y="58" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <circle cx="57" cy="48" r="13" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="57" cy="48" r="9" fill="#c8a850" opacity="0.25"/>
+            <!-- Flecha arco lateral -->
+            <path d="M95 80 Q105 65 95 50" stroke="#c8a850" stroke-width="1.8" fill="none" stroke-dasharray="3,2" stroke-linecap="round"/>
+            <text x="60" y="15" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">pies al ancho</text>
+            <text x="60" y="25" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">de hombros</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 3</div>
+          <div class="ex-name">Balanceo lateral de tronco</div>
+          <span class="ex-badge badge-warm">⏱ 2 minutos</span>
+          <p class="ex-desc">Pies al ancho de hombros, manos en la cadera. Inclina el tronco suavemente hacia la derecha, deslizando la mano derecha por el muslo hacia la rodilla. Regresa al centro. Repite al lado izquierdo. Mantén 3 segundos en cada lado, 8 repeticiones alternas.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Estira la cadena lateral (oblicuos, cuadrado lumbar), músculos que trabajan intensamente durante el swing completo.</div>
+        </div>
+      </div>
+
+    </div><!-- /ex-list-wrap -->
+  </div><!-- /phase-wrap calentamiento -->
+
+  <!-- FASE 2: PRÁCTICA PRINCIPAL -->
+  <div class="phase-wrap">
+    <div class="phase-tab phase-tab-main">
+      <div class="phase-dot dot-main"></div>
+      <span class="phase-name phase-name-main">Práctica principal</span>
+      <span class="phase-mins">25 minutos</span>
+    </div>
+    <div class="ex-list-wrap ex-list-main">
+
+      <!-- EJ 4 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Wu Ji - postura raíz -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <!-- Piernas ligeramente flexionadas -->
+            <line x1="55" y1="108" x2="46" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <line x1="65" y1="108" x2="74" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <!-- Rodillas levemente dobladas -->
+            <ellipse cx="49" cy="120" rx="5" ry="4" fill="#3d6b47" opacity="0.2"/>
+            <ellipse cx="71" cy="120" rx="5" ry="4" fill="#3d6b47" opacity="0.2"/>
+            <!-- Torso recto -->
+            <rect x="47" y="70" width="26" height="40" rx="7" fill="#3d6b47" opacity="0.2" stroke="#3d6b47" stroke-width="1.5"/>
+            <!-- Brazos relajados a los lados, ligeramente separados -->
+            <line x1="49" y1="78" x2="38" y2="110" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="71" y1="78" x2="82" y2="110" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- Cuello y cabeza centrada -->
+            <rect x="56" y="60" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <circle cx="60" cy="50" r="14" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="60" cy="50" r="10" fill="#c8a850" opacity="0.3"/>
+            <!-- Línea vertical de alineación -->
+            <line x1="60" y1="22" x2="60" y2="132" stroke="#c8a850" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+            <!-- Flecha hacia el suelo (arraigo) -->
+            <path d="M60 132 L56 125 M60 132 L64 125" stroke="#c8a850" stroke-width="1.5" stroke-linecap="round"/>
+            <text x="60" y="14" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">columna recta</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 4</div>
+          <div class="ex-name">Postura Wu Ji — La Raíz</div>
+          <span class="ex-badge badge-main">⏱ 3 minutos</span>
+          <p class="ex-desc">Pies paralelos al ancho de caderas. Rodillas ligeramente flexionadas (nunca bloqueadas). Columna recta, cabeza como suspendida desde arriba por un hilo. Brazos relajados a los lados. Ojos semicerrados o fijos en un punto. Respira lento y profundo.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Entrena la postura de address: la misma alineación columna-cadera-rodilla se usa al pararse sobre la pelota.</div>
+        </div>
+      </div>
+
+      <!-- EJ 5 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Levantar y bajar las manos -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <line x1="55" y1="108" x2="46" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <line x1="65" y1="108" x2="74" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <!-- Torso -->
+            <rect x="47" y="70" width="26" height="40" rx="7" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <!-- Brazos levantados al frente -->
+            <path d="M48 78 Q35 78 28 65 Q26 55 35 52" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M72 78 Q85 78 92 65 Q94 55 85 52" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <!-- Palmas -->
+            <ellipse cx="35" cy="50" rx="7" ry="5" fill="#c8a850" opacity="0.6" transform="rotate(-20 35 50)"/>
+            <ellipse cx="85" cy="50" rx="7" ry="5" fill="#c8a850" opacity="0.6" transform="rotate(20 85 50)"/>
+            <!-- Cuello y cabeza -->
+            <rect x="56" y="60" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <circle cx="60" cy="50" r="13" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="60" cy="50" r="9" fill="#c8a850" opacity="0.25"/>
+            <!-- Flechas subir/bajar -->
+            <path d="M18 60 L18 45" stroke="#c8a850" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arrowUp)"/>
+            <path d="M102 60 L102 75" stroke="#3d6b47" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3,2" marker-end="url(#arrowDown)"/>
+            <defs>
+              <marker id="arrowUp" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto">
+                <path d="M0,5 L2.5,0 L5,5 Z" fill="#c8a850"/>
+              </marker>
+              <marker id="arrowDown" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto">
+                <path d="M0,0 L2.5,5 L5,0 Z" fill="#3d6b47"/>
+              </marker>
+            </defs>
+            <text x="60" y="13" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">sincronizar con</text>
+            <text x="60" y="23" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">respiración</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 5</div>
+          <div class="ex-name">Levantar y bajar las manos</div>
+          <span class="ex-badge badge-main">⏱ 5 minutos</span>
+          <p class="ex-desc">Desde Wu Ji, al inhalar eleva ambos brazos hacia adelante con palmas mirando abajo, hasta la altura de los hombros. Al exhalar, baja los brazos suavemente doblando las rodillas levemente. El movimiento dura exactamente lo que dura la respiración. 8–10 repeticiones muy lentas.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Coordina la respiración con el movimiento de brazos, patrón fundamental para el ritmo del swing y el control del timing.</div>
+        </div>
+      </div>
+
+      <!-- EJ 6 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Separar la crin del caballo salvaje -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <!-- Pierna delantera (izquierda) en bow stance -->
+            <line x1="50" y1="100" x2="38" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <!-- Pierna trasera (derecha) extendida -->
+            <line x1="68" y1="100" x2="84" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <!-- Torso rotado ligeramente -->
+            <rect x="46" y="66" width="26" height="36" rx="6" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5" transform="rotate(-5 59 84)"/>
+            <!-- Brazo izquierdo adelante arriba -->
+            <path d="M50 74 Q38 68 28 55" stroke="#c8a850" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <ellipse cx="26" cy="53" rx="7" ry="5" fill="#c8a850" opacity="0.65" transform="rotate(-30 26 53)"/>
+            <!-- Brazo derecho abajo -->
+            <path d="M68 78 Q80 82 90 90" stroke="#3d6b47" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <ellipse cx="92" cy="92" rx="7" ry="5" fill="#3d6b47" opacity="0.35" transform="rotate(30 92 92)"/>
+            <!-- Cuello y cabeza -->
+            <rect x="54" y="57" width="8" height="11" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <circle cx="56" cy="47" r="13" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="56" cy="47" r="9" fill="#c8a850" opacity="0.25"/>
+            <!-- Flecha transferencia peso -->
+            <path d="M80 118 L55 118" stroke="#c8a850" stroke-width="1.5" fill="none" marker-end="url(#arrowL)"/>
+            <defs>
+              <marker id="arrowL" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto">
+                <path d="M5,0 L0,2.5 L5,5 Z" fill="#c8a850"/>
+              </marker>
+            </defs>
+            <text x="60" y="13" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">transfiere el peso</text>
+            <text x="60" y="23" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">paso a paso</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 6</div>
+          <div class="ex-name">Separar la crin del caballo salvaje</div>
+          <span class="ex-badge badge-main">⏱ 8 minutos</span>
+          <p class="ex-desc">Desde la postura central, da un paso adelante con el pie izquierdo (bow stance). Simultáneamente el brazo izquierdo sube hacia adelante con palma arriba, el brazo derecho baja con palma abajo, como separando algo entre las dos manos. Transfiere el 70% del peso al pie delantero. Repite con lado derecho. 5 repeticiones por lado.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Replica directamente la transferencia de peso del backswing al follow-through. Es el ejercicio más relevante para el swing.</div>
+        </div>
+      </div>
+
+      <!-- EJ 7 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Acariciar la cola del pájaro -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <!-- Bow stance -->
+            <line x1="52" y1="102" x2="40" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <line x1="68" y1="102" x2="82" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <!-- Torso con rotación -->
+            <rect x="45" y="66" width="28" height="38" rx="7" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5" transform="rotate(5 59 85)"/>
+            <!-- Ward off: brazo izquierdo en arco arriba -->
+            <path d="M52 72 Q38 60 30 48" stroke="#c8a850" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <ellipse cx="28" cy="45" rx="8" ry="6" fill="#c8a850" opacity="0.6" transform="rotate(-40 28 45)"/>
+            <!-- Brazo derecho con empuje -->
+            <path d="M68 76 Q82 72 90 65" stroke="#3d6b47" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <ellipse cx="93" cy="63" rx="7" ry="6" fill="#3d6b47" opacity="0.4" transform="rotate(20 93 63)"/>
+            <!-- Cuello y cabeza -->
+            <rect x="55" y="56" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <circle cx="57" cy="46" r="13" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="57" cy="46" r="9" fill="#c8a850" opacity="0.25"/>
+            <!-- Arc de rotación -->
+            <path d="M22 80 Q18 65 22 50" stroke="#c8a850" stroke-width="1.5" fill="none" stroke-dasharray="3,2" opacity="0.8"/>
+            <!-- 4 fases label -->
+            <text x="60" y="12" text-anchor="middle" font-size="8.5" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">4 fases · 4 rep</text>
+            <text x="60" y="22" text-anchor="middle" font-size="8" fill="#8a6a20" font-family="Inter,sans-serif">cada lado</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 7</div>
+          <div class="ex-name">Acariciar la cola del pájaro</div>
+          <span class="ex-badge badge-main">⏱ 9 minutos</span>
+          <p class="ex-desc">Secuencia de 4 fases que fluyen sin pausa: <strong>Ward Off</strong> (bloqueo circular con brazo izquierdo), <strong>Roll Back</strong> (girar el torso llevando el brazo atrás), <strong>Press</strong> (comprimir hacia adelante con ambas manos), <strong>Push</strong> (empujar con las dos palmas). Cada fase dura una respiración completa. 4 repeticiones por lado.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Entrena la rotación completa del torso disociada de la cadera — la clave biomecánica para generar potencia sin lesionar la espalda.</div>
+        </div>
+      </div>
+
+      <!-- EJ 8 - Látigo simple -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dan Bian - Látigo simple -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <!-- Stance amplio -->
+            <line x1="55" y1="104" x2="40" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <line x1="65" y1="104" x2="82" y2="132" stroke="#3d6b47" stroke-width="4" stroke-linecap="round"/>
+            <!-- Torso rotado hacia izquierda -->
+            <rect x="46" y="68" width="26" height="38" rx="7" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5" transform="rotate(-10 59 87)"/>
+            <!-- Brazo izquierdo completamente extendido -->
+            <line x1="50" y1="76" x2="18" y2="72" stroke="#c8a850" stroke-width="3.5" stroke-linecap="round"/>
+            <ellipse cx="15" cy="72" rx="7" ry="5" fill="#c8a850" opacity="0.7" transform="rotate(-5 15 72)"/>
+            <!-- Brazo derecho en gancho (pico) -->
+            <path d="M68 76 Q90 65 100 58" stroke="#3d6b47" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Gancho de la mano derecha -->
+            <path d="M100 58 Q106 54 107 60 Q106 66 100 64" stroke="#3d6b47" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Cabeza mirando a mano izquierda -->
+            <rect x="52" y="58" width="8" height="12" rx="3" fill="#3d6b47" opacity="0.6"/>
+            <circle cx="50" cy="48" r="13" fill="#3d6b47" opacity="0.18" stroke="#3d6b47" stroke-width="1.5"/>
+            <circle cx="50" cy="48" r="9" fill="#c8a850" opacity="0.25"/>
+            <!-- Flecha rotación tronco -->
+            <path d="M93 90 Q98 78 95 66" stroke="#c8a850" stroke-width="1.5" fill="none" stroke-dasharray="3,2" opacity="0.7"/>
+            <text x="60" y="13" text-anchor="middle" font-size="9" fill="#3d6b47" font-family="Inter,sans-serif" font-weight="500">brazo extendido</text>
+            <text x="60" y="23" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">mano en gancho</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Ejercicio 8</div>
+          <div class="ex-name">Látigo simple — Dan Bian</div>
+          <span class="ex-badge badge-main">⏱ 3 minutos</span>
+          <p class="ex-desc">Desde el centro, gira el torso hacia la derecha mientras la mano derecha forma un "gancho" (dedos juntos apuntando abajo). Continúa rotando hacia la izquierda extendiendo el brazo izquierdo completamente, palma hacia afuera. La mirada sigue la mano izquierda. Posición final: brazos en línea horizontal, torso rotado 90°. Mantén 3 seg, regresa. 5 repeticiones.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Entrena la rotación máxima del torso con estabilidad de base — exactamente el rango que necesitas en el backswing completo.</div>
+        </div>
+      </div>
+
+    </div><!-- /ex-list-wrap principal -->
+  </div><!-- /phase-wrap principal -->
+
+  <!-- FASE 3: CIERRE -->
+  <div class="phase-wrap">
+    <div class="phase-tab phase-tab-cool">
+      <div class="phase-dot dot-cool"></div>
+      <span class="phase-name phase-name-cool">Cierre y meditación</span>
+      <span class="phase-mins">5 minutos</span>
+    </div>
+    <div class="ex-list-wrap ex-list-cool">
+
+      <!-- EJ 9 -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shou Shi - cierre -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <line x1="55" y1="108" x2="46" y2="132" stroke="#6b4a2a" stroke-width="4" stroke-linecap="round"/>
+            <line x1="65" y1="108" x2="74" y2="132" stroke="#6b4a2a" stroke-width="4" stroke-linecap="round"/>
+            <!-- Torso -->
+            <rect x="47" y="72" width="26" height="38" rx="7" fill="#6b4a2a" opacity="0.15" stroke="#6b4a2a" stroke-width="1.5"/>
+            <!-- Manos en dan tian (bajo abdomen) -->
+            <ellipse cx="52" cy="100" rx="10" ry="6" fill="#c8a850" opacity="0.55" transform="rotate(-10 52 100)"/>
+            <ellipse cx="68" cy="100" rx="10" ry="6" fill="#c8a850" opacity="0.45" transform="rotate(10 68 100)"/>
+            <!-- Brazos suaves -->
+            <path d="M49 80 Q40 88 48 100" stroke="#6b4a2a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M71 80 Q80 88 72 100" stroke="#6b4a2a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <!-- Cuello y cabeza con ojos cerrados -->
+            <rect x="56" y="62" width="8" height="12" rx="3" fill="#6b4a2a" opacity="0.55"/>
+            <circle cx="60" cy="52" r="14" fill="#6b4a2a" opacity="0.15" stroke="#6b4a2a" stroke-width="1.5"/>
+            <circle cx="60" cy="52" r="10" fill="#c8a850" opacity="0.2"/>
+            <!-- Ojos cerrados (líneas) -->
+            <line x1="54" y1="51" x2="58" y2="51" stroke="#6b4a2a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="62" y1="51" x2="66" y2="51" stroke="#6b4a2a" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Círculo de energía dan tian -->
+            <circle cx="60" cy="100" r="14" fill="none" stroke="#c8a850" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>
+            <text x="60" y="14" text-anchor="middle" font-size="9" fill="#6b4a2a" font-family="Inter,sans-serif" font-weight="500">manos al</text>
+            <text x="60" y="24" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">dan tian</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Cierre</div>
+          <div class="ex-name">Shou Shi — Recolectar la energía</div>
+          <span class="ex-badge badge-cool">⏱ 2 minutos</span>
+          <p class="ex-desc">Lleva ambas manos al dan tian (abdomen inferior, unos 5 cm bajo el ombligo). La mano izquierda sobre la derecha. Ojos semicerrados. Respira lentamente 3–4 veces, sintiendo cómo el cuerpo recoge y asienta la energía trabajada. Luego abre los ojos suavemente.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Practica el estado mental de calma-concentración que necesitas mantener durante toda la ronda de golf.</div>
+        </div>
+      </div>
+
+      <!-- EJ 10: Meditación -->
+      <div class="ex-card">
+        <div class="ex-figure">
+          <svg viewBox="0 0 120 140" width="110" height="128" xmlns="http://www.w3.org/2000/svg">
+            <!-- Meditación de pie -->
+            <line x1="20" y1="132" x2="100" y2="132" stroke="#b0aa98" stroke-width="1.5"/>
+            <line x1="55" y1="108" x2="46" y2="132" stroke="#6b4a2a" stroke-width="4" stroke-linecap="round"/>
+            <line x1="65" y1="108" x2="74" y2="132" stroke="#6b4a2a" stroke-width="4" stroke-linecap="round"/>
+            <!-- Torso sereno -->
+            <rect x="47" y="72" width="26" height="38" rx="7" fill="#6b4a2a" opacity="0.13" stroke="#6b4a2a" stroke-width="1.5"/>
+            <!-- Brazos relajados -->
+            <line x1="49" y1="80" x2="38" y2="112" stroke="#6b4a2a" stroke-width="3" stroke-linecap="round"/>
+            <line x1="71" y1="80" x2="82" y2="112" stroke="#6b4a2a" stroke-width="3" stroke-linecap="round"/>
+            <!-- Cabeza -->
+            <rect x="56" y="62" width="8" height="12" rx="3" fill="#6b4a2a" opacity="0.5"/>
+            <circle cx="60" cy="52" r="14" fill="#6b4a2a" opacity="0.13" stroke="#6b4a2a" stroke-width="1.5"/>
+            <circle cx="60" cy="52" r="10" fill="#c8a850" opacity="0.18"/>
+            <!-- Ojos cerrados -->
+            <line x1="54" y1="51" x2="58" y2="51" stroke="#6b4a2a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="62" y1="51" x2="66" y2="51" stroke="#6b4a2a" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Ondas de calma concéntricas -->
+            <circle cx="60" cy="90" r="22" fill="none" stroke="#c8a850" stroke-width="0.8" stroke-dasharray="2,4" opacity="0.5"/>
+            <circle cx="60" cy="90" r="30" fill="none" stroke="#c8a850" stroke-width="0.6" stroke-dasharray="2,6" opacity="0.3"/>
+            <text x="60" y="14" text-anchor="middle" font-size="9" fill="#6b4a2a" font-family="Inter,sans-serif" font-weight="500">observar la</text>
+            <text x="60" y="24" text-anchor="middle" font-size="9" fill="#8a6a20" font-family="Inter,sans-serif">respiración</text>
+          </svg>
+        </div>
+        <div class="ex-body">
+          <div class="ex-number">Meditación</div>
+          <div class="ex-name">Quietud de pie o sentada</div>
+          <span class="ex-badge badge-cool">⏱ 3 minutos</span>
+          <p class="ex-desc">De pie o sentado en una silla. Ojos cerrados. Sin hacer nada especial: simplemente observa la respiración natural. Cuando llegue un pensamiento, obsérvalo sin seguirlo y vuelve a la respiración. El objetivo no es no pensar, sino no dejarse arrastrar por los pensamientos.</p>
+          <div class="ex-golf"><span class="golf-tag">Golf</span> Desarrolla la capacidad de reset mental entre hoyo y hoyo, y de mantener foco bajo presión en putts decisivos.</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /phase-wrap cierre -->
+</div><!-- /page-section ejercicios -->
+
+<!-- ═══════════════════════════════ PROGRESIÓN ════════════════════════════ -->
+<div style="background: var(--paper2); padding: 0.5rem 0;">
+<div class="page-section">
+  <p class="section-eyebrow">A 3 meses vista</p>
+  <h2 class="section-title">Progresión</h2>
+  <div class="section-line"></div>
+
+  <div class="prog-card">
+    <div class="prog-header">
+      <div class="prog-num prog-num-1">1</div>
+      <div>
+        <div class="prog-title">Fundamentos</div>
+        <div class="prog-title-sub">Mes 1 · semanas 1–4</div>
+      </div>
+      <div class="prog-period">35 min · 3×/sem</div>
+    </div>
+    <div class="prog-body">
+      <div class="prog-item">Aprender y memorizar los 7 ejercicios de esta guía sin apuro</div>
+      <div class="prog-item">Prioridad: postura, respiración y lentitud — no la perfección del movimiento</div>
+      <div class="prog-item">Practicar cerca de una pared o silla los primeros días para ganar confianza en el equilibrio</div>
+      <div class="prog-golf-note">⛳ Tai Chi antes del golf: practicar Wu Ji y respiración abdominal en el estacionamiento antes de ir al primer tee.</div>
+    </div>
+  </div>
+
+  <div class="prog-card">
+    <div class="prog-header">
+      <div class="prog-num prog-num-2">2</div>
+      <div>
+        <div class="prog-title">Expansión</div>
+        <div class="prog-title-sub">Mes 2 · semanas 5–8</div>
+      </div>
+      <div class="prog-period">40 min · 3×/sem</div>
+    </div>
+    <div class="prog-body">
+      <div class="prog-item">Agregar: <strong>Mano de nube</strong> (movimientos circulares coordinados de las dos manos)</div>
+      <div class="prog-item">Agregar: <strong>Patada de talón derecha</strong> (balance sobre un pie, clave para el equilibrio)</div>
+      <div class="prog-item">Aumentar repeticiones del Látigo Simple a 8 por lado</div>
+      <div class="prog-golf-note">⛳ El equilibrio en un pie del mes 2 mejora directamente la estabilidad en el follow-through del swing.</div>
+    </div>
+  </div>
+
+  <div class="prog-card">
+    <div class="prog-header">
+      <div class="prog-num prog-num-3">3</div>
+      <div>
+        <div class="prog-title">Forma 8 pasos</div>
+        <div class="prog-title-sub">Mes 3 · semanas 9–12</div>
+      </div>
+      <div class="prog-period">45 min · 3×/sem</div>
+    </div>
+    <div class="prog-body">
+      <div class="prog-item">Encadenar todos los ejercicios en secuencia continua (la Forma 8 de Yang)</div>
+      <div class="prog-item">La forma completa dura 8–10 minutos de movimiento fluido sin pausa</div>
+      <div class="prog-item">Considerar unirse a una clase grupal: el feedback visual acelera la corrección postural</div>
+      <div class="prog-golf-note">⛳ Con 3 meses de práctica, la rotación de torso y el equilibrio habrán mejorado measurablemente en el swing.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════ CONSEJOS ══════════════════════════════ -->
+<div class="page-section">
+  <p class="section-eyebrow">Para tener en cuenta</p>
+  <h2 class="section-title">Consejos clave</h2>
+  <div class="section-line"></div>
+
+  <div class="tip-card">
+    <div>
+      <strong>Más lento, mejor</strong>
+      Un movimiento en 10 segundos trabaja más el equilibrio y la propiocepción que hacerlo en 3. No hay apuro. Si sientes que el movimiento se apura solo, respira más lento.
+    </div>
+  </div>
+  <div class="tip-card">
+    <div>
+      <strong>Rodillas: atención especial</strong>
+      Con 89 kg, nunca flexionar más allá de las puntas de los pies. Si hay molestia en rodilla, reducir el rango de flexión a lo que sea cómodo. El Tai Chi debe ser indoloro siempre.
+    </div>
+  </div>
+  <div class="tip-card">
+    <div>
+      <strong>Calzado y superficie</strong>
+      Zapatillas de suela plana o pies descalzos sobre superficie firme y no resbaladiza. Evitar superficies irregulares al principio. El piso de madera o goma es ideal.
+    </div>
+  </div>
+  <div class="tip-card">
+    <div>
+      <strong>Respiración: nunca retener el aire</strong>
+      Exhalar en movimientos de apertura y extensión. Inhalar en movimientos de cierre y recogida. Si se te olvida, respira normalmente — es mejor que retener.
+    </div>
+  </div>
+  <div class="tip-card">
+    <div>
+      <strong>Antes de comenzar</strong>
+      Consultar con médico si hay condiciones de rodilla, cadera, presión arterial alta, vértigo o problemas vestibulares. El Tai Chi es seguro, pero la supervisión inicial siempre es prudente.
+    </div>
+  </div>
+  <div class="tip-card" style="border-left-color: var(--gold);">
+    <div>
+      <strong>El día que juegas golf</strong>
+      15 minutos de Tai Chi (calentamiento + Wu Ji + Látigo Simple) antes del juego activan la cadena cinética y reducen el riesgo de lesión muscular. Mejor que hacer stretching estático.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ════════════════════════════════ -->
+<footer>
+  <p>Guía personal de <span>Tai Chi Yang</span> · Elasticidad, equilibrio y golf</p>
+  <p style="margin-top: 6px;">Consultar con profesional de salud antes de iniciar cualquier programa de ejercicio</p>
+</footer>
+
+</body>
+</html>
+HTMLEOF
+echo "File created: $(wc -c < /home/claude/taichi_golf_guia.html) bytes"
